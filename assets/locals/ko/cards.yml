@@ -1,0 +1,53 @@
+ko:
+  cards:
+    MELEE_HIT:
+      name: 주먹 공격
+      description: "두 손으로 적을 때려 %s (+3 강화마다) 피해를 줍니다."
+      state: "%s 의 피해를 줍니다."
+    ADRENALINE_SHOT:
+      name: 아드레날린 주사
+      description: "다음 3턴 동안 행동력을 2 추가로 얻습니다."
+    ENERGY_DRINK:
+      name: 에너지 드링크
+      description: "이번 턴에 행동력을 2 얻습니다."
+    CROWBAR:
+      name: 크로우바
+      description: "약간 녹슨 크로우바지만, 아직 쓸 만합니다!"
+      state: "%s 의 피해를 줍니다."
+    VIBRO_KNIFE:
+      name: 바이브로 나이프
+      description: "초음파 진동으로 거의 모든 것을 자를 수 있는 나이프입니다."
+      state: "%s 의 피해를 줍니다."
+    LZR_PISTOL:
+      name: LZR 권총
+      description: "집중된 빛선을 발사하는 LZR 권총입니다."
+      state: "%s 의 피해를 줍니다."
+    HAR-II:
+      name: HAR-II
+      description: "높은 연사력을 가진 중형 돌격소총입니다."
+      state: "%s 의 피해를 줍니다."
+  enemies:
+    RUST_MITE:
+      name: 녹슨 좀벌레
+      description: "벽의 금속을 갉아먹는 작은 기계 생물."
+    CLEAN_BOT:
+      name: 청소 봇
+      description: "청소를 멈추지 않는 봇..."
+    LASER_DRONE:
+      name: 레이저 드론
+      description: "강력한 레이저 광선을 발사하는 드론."
+    NANOBOT_SWARM:
+      name: 나노봇 군단
+      description: "작은 나노봇들이 무리를 지어 공격합니다."
+    CYBER_SLIME:
+      name: 사이버 슬라임
+      description: "전기로 이루어진 끈적한 물질."
+    CYBER_SPIDER:
+      name: 사이버 스파이더
+      description: "금속으로 만들어진 거대한 거미."
+    PLASMA_GOLEM:
+      name: 플라즈마 골렘
+      description: "플라즈마 에너지로 구성된 거대한 골렘."
+    REPAIR_DRONE:
+      name: 수리 드론
+      description: "다른 적을 수리하는 작은 드론."

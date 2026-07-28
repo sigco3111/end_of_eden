@@ -1,15 +1,13 @@
 ko:
   cards:
     MELEE_HIT:
-      name: 주먹 공격
-      description: "두 손으로 적을 때려 %s (+3 강화마다) 피해를 줍니다."
+      name: 맨손 공격
+      description: "맨손으로 %s (+1 강화마다) 의 피해를 줍니다."
       state: "%s 의 피해를 줍니다."
-    ADRENALINE_SHOT:
-      name: 아드레날린 주사
-      description: "다음 3턴 동안 행동력을 2 추가로 얻습니다."
-    ENERGY_DRINK:
-      name: 에너지 드링크
-      description: "이번 턴에 행동력을 2 얻습니다."
+    ARM_MOUNTED_GUN:
+      name: 팔 장착 총
+      description: "팔에 장착된 매우 강력한 무기입니다."
+      state: "%s 의 피해를 줍니다."
     CROWBAR:
       name: 크로우바
       description: "약간 녹슨 크로우바지만, 아직 쓸 만합니다!"
@@ -26,28 +24,160 @@ ko:
       name: HAR-II
       description: "높은 연사력을 가진 중형 돌격소총입니다."
       state: "%s 의 피해를 줍니다."
+    ADRENALINE_SHOT:
+      name: 아드레날린 주사
+      description: "다음 3턴 동안 행동력을 2 추가로 얻습니다."
+    ENRGY_DRINK_X91:
+      name: ENRGY 드링크 X91
+      description: "행동력 1을 얻습니다."
+      state: "행동력 %s 을 얻습니다."
+    ENRGY_DRINK_X92:
+      name: ENRGY 드링크 X92
+      description: "행동력 2를 얻습니다."
+      state: "행동력 %s 을 얻습니다."
+    ENRGY_DRINK_X93:
+      name: ENRGY 드링크 X93
+      description: "행동력 3을 얻습니다."
+      state: "행동력 %s 을 얻습니다."
+    BLOCK:
+      name: 방어
+      description: "자신을 보호해 방어도를 %s 얻습니다."
+      state: "방어도 %s 을 얻습니다."
+    BOUNCE_SHIELD:
+      name: 튕기는 방패
+      description: "다음 받는 공격의 피해를 튕겨냅니다. 피해를 입긴 합니다."
+      state: "받는 피해 %s 을 막습니다."
+    FLASH_BANG:
+      name: 섬광탄
+      description: "대상에게 \"실명\" 을 걸어 적의 주는 피해를 감소시킵니다."
+    FLASH_SHIELD:
+      name: 섬광 방패
+      description: "다음 공격을 무효화합니다."
+      state: "%s 의 받는 피해를 막습니다."
+    KNOCK_OUT:
+      name: 기절
+      description: "대상에게 \"기절\" 을 걸어 다음 턴을 보내게 합니다."
+    LONG_REST:
+      name: 긴 휴식
+      description: "4 (+1 강화마다) 만큼 체력을 회복합니다."
+      state: "체력 %s 을 회복합니다."
+    NANO_CHARGER:
+      name: 나노 충전기
+      description: "다음 공격의 피해가 2배가 됩니다."
+      state: "다음 공격의 피해가 %s 배가 됩니다."
+    NULLIFY:
+      name: 무효화
+      description: "이번 턴의 모든 피해를 무효화합니다."
+      state: "이번 턴의 모든 피해 %s 을 무효화합니다."
+    REST:
+      name: 짧은 휴식
+      description: "1 (+1 강화마다) 만큼 체력을 회복합니다."
+      state: "체력 %s 을 회복합니다."
+    SMOKE_BOMB:
+      name: 연막탄
+      description: "1턴 동안 모든 적의 명중률을 감소시킵니다."
+      state: "명중률 %s 감소."
+    STIM_PACK:
+      name: 자극제 팩
+      description: "일회용\n\n체력을 5 회복합니다."
+      state: "체력 %s 을 회복합니다."
+    ULTRA_FLASH_SHIELD:
+      name: 울트라 섬광 방패
+      description: "모든 공격을 무효화합니다."
+      state: "%s 의 모든 피해를 막습니다."
+  status_effects:
+    ADRENALINE_SHOT:
+      name: 아드레날린 주사
+      description: "행동력 2를 추가로 얻습니다."
+    BLOCK:
+      name: 방어
+      description: "스택마다 받는 피해가 감소합니다."
+    BOUNCE_SHIELD:
+      name: 튕기는 방패
+      description: "다음 공격의 피해를 튕겨냅니다."
+    FLASH_BANG:
+      name: 실명
+      description: "주는 피해가 25% 감소합니다."
+    FLASH_SHIELD:
+      name: 섬광 방패
+      description: "다음 공격을 무효화합니다."
+    KNOCK_OUT:
+      name: 기절
+      description: "행동 불가."
+    NANO_CHARGER:
+      name: 나노 충전
+      description: "다음 공격의 피해가 2배가 됩니다."
+    NULLIFY:
+      name: 무효화 필드
+      description: "이번 턴의 모든 피해를 무효화합니다."
+    SMOKE_BOMB:
+      name: 연막
+      description: "명중률 50% 감소."
+    ULTRA_FLASH_SHIELD:
+      name: 울트라 섬광 방패
+      description: "모든 공격을 무효화합니다."
+    CHARGED:
+      name: 충전됨
+      description: "스택마다 공격의 피해가 증가합니다."
+    CHARGING:
+      name: 충전 중
+      description: "드론이 강력한 공격을 위해 충전 중입니다."
+  artifacts:
+    ARM_MOUNTED_GUN:
+      name: 팔 장착 총
+      description: "팔에 장착된 매우 강력한 무기. 손에 들 수 있습니다."
+    BIO_RECYCLER:
+      name: 바이오 리사이클러
+      description: "적 처치 시 체력 1 회복."
+    COMBAT_GLASSES:
+      name: 전투용 안경
+      description: "원거리(R) 카드를 사용할 때마다 추가 피해 1을 줍니다."
+    COMBAT_GLOVES:
+      name: 전투용 장갑
+      description: "근거리(M) 카드를 사용할 때마다 추가 피해 1을 줍니다."
+    GOLD_SCRAPPER:
+      name: 골드 스크래퍼
+      description: "적 처치 시 골드 15 획득."
+    HEADBUT_HELMET:
+      name: 헤드벗 헬멧
+      description: "\"기절\" 카드 1장을 얻습니다."
+    INTERVA_JUICER:
+      name: 인터벌 주서
+      description: "전투 시작 시 체력 2 회복."
+    PORTABLE_BUFFER:
+      name: PRTBL 버퍼
+      description: "매 턴 시작 시 방어도 1을 얻습니다."
+    REFLECTIVE_ARMOR:
+      name: 반사 갑옷
+      description: "받는 피해의 25%를 공격자에게 되돌립니다."
+    SPEED_ENHANCER:
+      name: 속도 강화기
+      description: "전투 시작 시 손에 카드 1장을 추가로 들고 시작합니다."
   enemies:
     RUST_MITE:
       name: 녹슨 좀벌레
-      description: "벽의 금속을 갉아먹는 작은 기계 생물."
+      description: "금속을 갉아먹는 작은 로봇."
     CLEAN_BOT:
       name: 청소 봇
       description: "청소를 멈추지 않는 봇..."
     LASER_DRONE:
       name: 레이저 드론
-      description: "강력한 레이저 광선을 발사하는 드론."
+      description: "강력한 레이저 캐논을 장착한 드론."
     NANOBOT_SWARM:
       name: 나노봇 군단
-      description: "작은 나노봇들이 무리를 지어 공격합니다."
+      description: "점점 커지는 나노봇의 무리."
     CYBER_SLIME:
       name: 사이버 슬라임
-      description: "전기로 이루어진 끈적한 물질."
+      description: "처치되면 더 작은 슬라임으로 분열되는 사이버 슬라임."
+    CYBER_SLIME_MINION:
+      name: 사이버 슬라임 새끼
+      description: "사이버 슬라임의 더 작은 버전."
     CYBER_SPIDER:
       name: 사이버 스파이더
-      description: "금속으로 만들어진 거대한 거미."
+      description: "먹잇감이 가까이 오기를 기다리는 거대한 거미."
     PLASMA_GOLEM:
       name: 플라즈마 골렘
-      description: "플라즈마 에너지로 구성된 거대한 골렘."
+      description: "순수 플라즈마 에너지로 이루어진 골렘."
     REPAIR_DRONE:
       name: 수리 드론
-      description: "다른 적을 수리하는 작은 드론."
+      description: "다른 기계를 수리하고 지원하는 드론."

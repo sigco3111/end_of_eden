@@ -1,167 +1,216 @@
 <p align="center">
-  <img align="center" src=".github/header.png" />
+  <img align="center" src=".github/header.png" alt="End of Eden 헤더" />
 </p>
 
 <p align="right">
-  <a href="README.md">🇬🇧 English</a> · <a href="README.ko.md">🇰🇷 한국어</a>
 </p>
 
-[![Discord](https://img.shields.io/discord/1099310842564059168?label=discord)](https://discord.gg/XpDvfvVuB2) [![Go Report Card](https://goreportcard.com/badge/github.com/BigJk/end_of_eden)](https://goreportcard.com/report/github.com/BigJk/end_of_eden) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/BigJk/end_of_eden)](https://github.com/BigJk/end_of_eden/releases)
+[![Discord](https://img.shields.io/discord/1099310842564059168?label=discord)](https://discord.gg/XpDvfvVuB2) [![Go Report Card](https://goreportcard.com/badge/github.com/BigJk/end_of_eden)](https://goreportcard.com/report/github.com/BigJk/end_of_eden) [![GitHub release (latest by date)](https://img.shields.io/github/v/release/BigJk/end_of_eden)](https://github.com/BigJk/end_of_eden/releases) [![License](https://img.shields.io/github/license/BigJk/end_of_eden)](LICENSE)
 
-> Welcome to a world 500 years in the future, ravaged by climate change and nuclear wars. The remaining humans have become few and far between, replaced by mutated and plant-based creatures. In this gonzo-fantasy setting, you find yourself awakening from cryo sleep in an underground facility, long forgotten and alone. With all other cryosleep capsules broken, it's up to you to navigate this strange and dangerous world and uncover the secrets that led to your isolation...
+<a href="https://bigjk.itch.io/end-of-eden"><img align="right" src="http://jessemillar.github.io/available-on-itchio-badge/badge-bw.png" width="130" alt="itch.io에서 플레이"></a>
 
-<a href="https://bigjk.itch.io/end-of-eden"><img align="right" src="http://jessemillar.github.io/available-on-itchio-badge/badge-bw.png" width="130"></img></a>
+# End of Eden
 
-**End of Eden...**
-- Is a "Slay the Spire"-like, roguelite deck-builder game running fully in console
-- Collect Artifacts that give you new cards or various passive effects
-- Clash with strange beings and try to survive as long as possible
-- Use the base engine to create your own mods and content
+> *미래 500년 뒤, 기후 변화와 핵전쟁으로 황폐해진 세계. 남은 인간은 거의 사라지고, 그 자리엔 변이체와 식물 기반 생물들이 득세합니다.*
+>
+> *이 곤조-판타지 세계관 속에서, 당신은 잊혀진 지하 시설의 냉동 수면에서 깨어납니다. 다른 캡슐은 모두 깨져 있고, 당신만 홀로 눈을 뜹니다. 낯설고 위험한 세계를 헤쳐 나가며, 당신의 격리가 어떤 비밀로 인한 것인지 밝혀내야 합니다...*
 
-# Screenshots
+**End of Eden**은 *Slay the Spire* 스타일의 **로그라이트 덱빌더** 게임입니다. 터미널에서 완전히 동작하지만, 익숙하지 않다면 전용 창(GL 버전)에서 즐기실 수도 있어요.
 
-![Screenshot](.github/screenshot_gl1.png)
-![Screenshot](.github/screenshot_gl3.png)
+- 🃏 새로운 카드와 다양한 패시브 효과를 주는 아티팩트 수집
+- 👹 기이한 존재들과의 전투 — 가능한 한 오래 살아남기
+- 🎨 CRT 셰이더, 그레인 셰이더로 더 깊은 레트로 분위기
+- 🛠️ **Lua 모드 시스템**으로 자신만의 카드·적·아티팩트 추가
+- 🌏 한국어 포함 다국어 지원 (`assets/locals/`)
 
-<details><summary>Terminal Version Screenshots</summary>
+---
 
+# 목차
 
-![Screenshot](.github/screenshot.png)
-![Screenshot](.github/screenshot_merchant.png)
+- [스크린샷](#스크린샷)
+- [상태](#상태)
+- [빠른 시작](#빠른-시작)
+- [게임 방법](#게임-방법)
+  - [다운로드](#다운로드)
+  - [Docker](#docker)
+  - [설정](#설정)
+  - [콘솔](#콘솔)
+- [모딩 — Lua](#모딩--lua)
+- [흥미로운 이야기](#흥미로운-이야기)
+- [빌드](#빌드)
+- [버전 관리](#버전-관리)
+- [소셜](#소셜)
+- [크레딧](#크레딧)
+- [라이선스](#라이선스)
+
+---
+
+# 스크린샷
+
+![GL 버전 스크린샷](.github/screenshot_gl1.png)
+![GL 버전 스크린샷 2](.github/screenshot_gl3.png)
+
+<details>
+<summary>터미널 버전 스크린샷 보기</summary>
+
+![터미널 버전 스크린샷](.github/screenshot.png)
+![상점 화면](.github/screenshot_merchant.png)
+
 </details>
 
-# Status
+---
 
-The game is still in early development. There are still a lot of content missing and the game is not balanced at all. It mostly contians test content at the moment. If you want to help out, feel free to open a issue or pull request or even better join the [discord](https://discord.gg/XpDvfvVuB2).
+# 상태
 
-# :video_game: How to play
+게임은 아직 **초기 개발 단계**입니다. 빠진 콘텐츠가 많고 밸런스도 전혀 잡혀 있지 않아서 현재는 대부분 테스트 콘텐츠만 들어 있습니다.
 
-**Quickstart:**
+기여하고 싶으시다면 이슈나 풀 리퀘스트를 열어주세요. 더 좋은 방법은 [Discord](https://discord.gg/XpDvfvVuB2)에 참여해 직접 이야기 나누는 것입니다.
 
-- You just want to test the game: Download the ``_gl`` version
-- You don't want to leave your terminal: Download the ``_term`` version
+---
 
-**Long Answer:**
+# 빠른 시작
 
+| 하고 싶은 것 | 추천 버전 |
+|---|---|
+| 일단 게임만 가볍게 테스트해 보고 싶다 | `_gl` 버전 다운로드 |
+| 터미널을 떠나고 싶지 않다 / SSH로 원격 플레이 | `_term` 버전 다운로드 |
+| 도커에 익숙하다 | `ghcr.io/bigjk/end_of_eden` 이미지 |
+| 카드/적/아티팩트를 직접 만들어 보고 싶다 | `cmd/game/` 소스 빌드 + Lua 모딩 |
 
-The game can be played in two ways. You can download the ``_term`` or ``_gl`` version. You can see which type you download from the file name (``end_of_eden_term`` vs ``end_of_eden_gl``). The ``_term`` version is the base game and runs in your terminal. The ``_gl`` version is the same game but running in a dedicated window, so no console magic is needed just a plain old game window. If you are not familiar with the terminal, you can try out the ``_gl`` version. It also comes with a optional crt shader to give the game a more retro look. Check out the [Settings](#settings) section for more information.
+> 💡 두 버전 모두 게임플레이는 완전히 동일합니다. 차이는 **렌더링 방식**(터미널 vs OpenGL 창)뿐이에요.
 
-## :file_folder: Download
+---
 
-- Download the latest game version for your OS here https://github.com/BigJk/end_of_eden/releases
-- **Attention:** Keep in mind that the ``_term`` version of the game requires a modern terminal to run properly. See [Console](#console) for more information.
+# 게임 방법
 
-## :whale: Docker
+## 다운로드
 
-If you are an advanced user you can also run the game through docker.
+1. 본인의 OS에 맞는 최신 게임 버전은 [Releases](https://github.com/BigJk/end_of_eden/releases)에서 다운로드하세요.
+2. 파일 이름으로 버전을 구분할 수 있습니다.
+   - `end_of_eden_term` — 터미널 버전 (기본 게임)
+   - `end_of_eden_gl` — GL 버전 (전용 창, CRT/그레인 셰이더 옵션)
+3. 터미널에 익숙하지 않다면 `_gl` 버전을 시도해 보세요.
 
-<details><summary>Docker Guide</summary>
+> ⚠️ `_term` 버전의 마우스 컨트롤 등 모든 기능을 사용하려면 **모던 터미널**이 필요합니다. 자세한 내용은 [콘솔](#콘솔) 섹션을 참조하세요.
 
+## Docker
 
-### Pull Image
+<details>
+<summary>Docker 가이드 펼치기</summary>
 
-```
+고급 사용자라면 도커로도 게임을 실행할 수 있습니다.
+
+### 이미지 가져오기
+
+```bash
 docker pull ghcr.io/bigjk/end_of_eden:master
 ```
 
-### Base Game
+### 기본 게임
 
-You can run the base game through docker, but audio is not supported. You also have to specify the terminal capabilities via environment flags. The following example uses the ``xterm-256color`` terminal and enables true color support.
+기본 게임을 도커로 실행할 수 있지만 **오디오는 지원되지 않습니다**. 환경 플래그로 터미널 기능을 명시해야 합니다. 아래 예제는 `xterm-256color` 터미널과 트루 컬러를 활성화합니다.
 
-````
-docker run --name end_of_eden -e TERM=xterm-256color -e COLORTERM=truecolor -it ghcr.io/bigjk/end_of_eden:master /app/end_of_eden --audio=false
-````
+```bash
+docker run --name end_of_eden \
+  -e TERM=xterm-256color \
+  -e COLORTERM=truecolor \
+  -it ghcr.io/bigjk/end_of_eden:master \
+  /app/end_of_eden --audio=false
+```
 
-Possible options for the ``TERM`` environment variable are:
-- ``xterm-256color``
-- ``xterm``
-- ``screen-256color``
-- ``screen``
-- ``vt100``
-and more...
+`TERM` 환경 변수의 가능한 옵션:
 
-``COLORTERM`` defines if the terminal supports true color. If you are using a modern terminal its probably safe to set this to ``truecolor``. Other options are ``24bit``, ``16mil`` and ``8bit``.
+- `xterm-256color`
+- `xterm`
+- `screen-256color`
+- `screen`
+- `vt100`
+- 등...
 
-### SSH Server
+`COLORTERM`은 터미널이 트루 컬러를 지원하는지 정의합니다. 모던 터미널이라면 `truecolor`로 설정해도 안전합니다. 다른 옵션은 `24bit`, `16mil`, `8bit`입니다.
 
-````
+### SSH 서버
+
+```bash
 docker run --name end_of_eden -p 8275:8273 -it ghcr.io/bigjk/end_of_eden:master /app/end_of_eden_ssh
-````
+```
 
 </details>
 
-## :bookmark_tabs: Settings
+## 설정
 
-Both versions have separate settings files. The settings files are located in the same directory as the game executable. The settings files are automatically created on the first game start. You can modify the settings in the settings file or in game via the settings menu.
+두 버전 모두 별도의 설정 파일을 가집니다. 설정 파일은 게임 실행 파일과 같은 위치에 있고, 첫 게임 시작 시 자동으로 생성됩니다. 설정 파일이나 게임 내 설정 메뉴에서 변경할 수 있어요.
 
-### ``_term`` Version
+### `_term` 버전
 
-- The settings file is called ``settings_term.toml``
-- The settings can be modified in game via the settings menu
+- 설정 파일: `settings_term.toml`
+- 게임 내 설정 메뉴로 변경 가능
 
-<details><summary>Available settings in settings.toml</summary>
+<details>
+<summary><code>settings_term.toml</code> 사용 가능한 설정</summary>
 
 ```toml
-# Audio volume
+# 오디오 볼륨
 #
 volume = 1.0
 
-# Mods that should be loaded (can be edited in game)
+# 로드할 모드 (게임 내에서도 수정 가능)
 #
 mods = [ "example_mod", "other_mod" ]
 ```
 
 </details>
 
-### ``_gl`` Version
+### `_gl` 버전
 
-- The settings file is called ``settings_gl.toml``
-- The settings can be modified in game via the settings menu
+- 설정 파일: `settings_gl.toml`
+- 게임 내 설정 메뉴로 변경 가능
 
-<details><summary>Available settings in settings_gl.toml</summary>
+<details>
+<summary><code>settings_gl.toml</code> 사용 가능한 설정</summary>
 
 ```toml
-# Audio volume
+# 오디오 볼륨
 #
 volume = 1.0
 
-# Mods that should be loaded (can be edited in game)
+# 로드할 모드 (게임 내에서도 수정 가능)
 #
 mods = [ "example_mod", "other_mod" ]
 
-# Enable or disable audio
+# 오디오 활성화 여부
 #
 audio = true
 
-# Enable or disable the crt shader
+# CRT 셰이더 활성화 여부
 #
 crt = true
 
-# Enable or disable the grain shader
+# 그레인 셰이더 활성화 여부
 #
 grain = true
 
-# DPI scaling
+# DPI 스케일링
 #
 dpi = 1
 
-# Font to be used for normal, italic and bold text.
-# The font needs to be relative to ./assets/fonts.
-# Using a nerd font is recommended: https://www.nerdfonts.com/font-downloads
+# 일반, 이탤릭, 굵은 텍스트에 사용될 폰트.
+# 폰트는 ./assets/fonts를 기준으로 상대 경로여야 합니다.
+# Nerd Font 사용을 권장합니다: https://www.nerdfonts.com/font-downloads
 #
 font_normal = 'BigBlueTermPlusNerdFont-Regular.ttf'
 font_italic = 'BigBlueTermPlusNerdFont-Regular.ttf'
 font_bold = 'BigBlueTermPlusNerdFont-Regular.ttf'
 
-# Font size
+# 폰트 크기
 #
 font_size = 12
 
-# Max fps
+# 최대 FPS
 #
 fps = 30
 
-# Window size
+# 창 크기
 #
 height = 800
 width = 1100
@@ -169,39 +218,56 @@ width = 1100
 
 </details>
 
-## :tv: Console
+## 콘솔
 
-A modern console is required to support all the features like full mouse control in the ``_term`` version. Just start the  ``end_of_eden(.exe)`` executable in your terminal.
+`_term` 버전의 마우스 컨트롤 등 모든 기능을 지원하려면 **모던 콘솔**이 필요합니다. 터미널에서 `end_of_eden(.exe)` 실행 파일을 시작하면 됩니다.
 
-### Tested Terminals
-| Terminal                                              |   OS    | Status             | Note                                                            |
-|-------------------------------------------------------|---------|--------------------|-----------------------------------------------------------------|
-| **[terminal](https://github.com/microsoft/terminal)** | windows | :white_check_mark: | recommended on windows                                          |
-| **cmd**                                               | windows | :warning:          | no mouse motion support, mouse clicks and everything else works |
-| **[iterm2](https://iterm2.com/)**                     | osx     | :white_check_mark: |                                                                 |
+### 테스트된 터미널
 
-## :books: Lua & Modding
+| 터미널 | OS | 상태 | 비고 |
+|---|---|---|---|
+| **[Windows Terminal](https://github.com/microsoft/terminal)** | Windows | ✅ 권장 | Windows에서 가장 잘 동작 |
+| **cmd** | Windows | ⚠️ 제한 | 마우스 모션 미지원, 클릭 및 기타 기능은 동작 |
+| **[iTerm2](https://iterm2.com/)** | macOS | ✅ | |
 
-Lua is used to define artifacts, cards, enemies and everything else that is dynamic in the game. This makes End of Eden easily extendable. If you want to create mods or learn more about lua:
+---
 
-- See [Lua Documentation](docs/LUA_DOCS.md)
-- See [Game Content Documentation](docs/GAME_CONTENT_DOCS.md)
+# 모딩 — Lua
 
-# :round_pushpin: Interesting bits and pieces
+**Lua**는 게임에서 아티팩트, 카드, 적 등 동적인 모든 것을 정의하는 데 사용됩니다. 그래서 End of Eden을 쉽게 확장할 수 있어요.
 
-Here are some interesting bits and pieces about the game that I like to share as it was great fun to build them.
+| 문서 | 설명 |
+|---|---|
+| [Lua 문서](docs/LUA_DOCS.md) | Lua 바인딩 전체 가이드 |
+| [Lua API 레퍼런스](docs/LUA_API_DOCS.md) | 자동 생성된 API 문서 |
+| [게임 콘텐츠 문서](docs/GAME_CONTENT_DOCS.md) | 카드/적/아티팩트 작성법 |
 
-<details><summary>The game got its own terminal emulator</summary><br>
+### 예제 모드 위치
 
-While the game can run in the terminal perfectly fine, I wanted to provide non-terminal users with a way to play the game without having to deal with the terminal themselves. So, I thought, "How hard can it be to write a simple terminal emulator in Go?" To my surprise, it wasn't that difficult. I had a lot of fun while writing [CRT](https://github.com/BigJk/crt). A nice side effect is the possibility of including CRT shaders that give the game an even more retro feeling.
+- 모드 디렉토리: `mods/`
+- 한국어 번역: `assets/locals/ko/`
+
+---
+
+# 흥미로운 이야기
+
+> 게임을 직접 만들면서 정말 재밌었던 부분들을 모아뒀어요.
+
+<details>
+<summary><b>게임은 자체 터미널 에뮬레이터를 가지고 있습니다</b></summary>
+
+게임은 터미널에서 완벽하게 동작하지만, 비-터널 사용자도 터미널을 직접 다루지 않고 게임을 플레이할 수 있는 방법을 제공하고 싶었습니다. 그래서 "Go로 간단한 터미널 에뮬레이터를 만드는 게 얼마나 어려울까?"라고 생각했습니다.
+
+놀랍게도 그다지 어렵지 않았습니다. [CRT](https://github.com/BigJk/crt)를 작성하면서 정말 재밌게 놀랐고, 좋은 부수 효과로 게임에 더 레트로한 느낌을 주는 CRT 셰이더를 포함할 수 있었습니다.
 
 </details>
 
-<details><summary>The game has a fuzzy tester</summary><br>
+<details>
+<summary><b>게임에는 퍼지 테스터가 있습니다</b></summary>
 
-I had a bunch of problems when I integrated the Lua scripting at the beginning. From simple nil dereference to Lua exploding on me, debugging the Lua code isn't as straightforward as debugging Go itself. I ran into a bunch of edge cases in my game's code where a certain chain of events would cause a panic. To counter that, I implemented a small fuzzy tester that throws operations at the game in random order, hoping to trigger a panic. If a panic happens, the fuzzy tester shows which chain of operations, together with which values, resulted in the panic.
+Lua 스크립팅을 처음 통합할 때 많은 문제에 부딪혔습니다. 단순한 nil 역참조부터 Lua가 폭주하는 것까지, Lua 코드를 디버깅하는 게 Go 자체를 디버깅하는 것만큼 쉽지 않았습니다.
 
-Here is an example operation that will try to cast a card with a random target. It also picks values like empty strings or IDs of other objects. A fuzzy tester wouldn't be a fuzzy tester if it only threw nice input at the system ;)
+특정 이벤트 체인이 패닉을 일으키는 게임 코드의 엣지 케이스가 많았고, 이를 대응하기 위해 게임에 **무작위 순서로 연산을 던져 패닉을 유발하는 작은 퍼지 테스터**를 구현했습니다. 패닉이 발생하면 어떤 연산 체인이 어떤 값과 함께 패닉을 일으켰는지 보여줍니다.
 
 ```go
 func castCardOp(rnd *rand.Rand, s *game.Session) string {
@@ -212,17 +278,18 @@ func castCardOp(rnd *rand.Rand, s *game.Session) string {
 }
 ```
 
-This is also integrated into the CI of this game. Each time a commit is pushed that changes Lua or Go, the fuzzy tester will be run for 30 seconds on 2 cores. If it fails, the CI pipeline fails.
+이는 게임의 CI에도 통합되어 있습니다. Lua나 Go를 변경하는 커밋이 푸시될 때마다, 퍼지 테스터는 2 코어에서 30초 동안 실행되며 실패하면 CI 파이프라인이 실패합니다.
 
-Check the code out in `/cmd/internal/fuzzy_tester`.
+코드는 `cmd/internal/fuzzy_tester`에서 확인할 수 있습니다.
 
 </details>
 
-<details><summary>The games content can be unit tested</summary><br>
+<details>
+<summary><b>게임 콘텐츠는 단위 테스트가 가능합니다</b></summary>
 
-Testing game content by hand or ensuring that it works as expected can be annoying. The most straightforward way is to go into the game, use whatever debugging terminal it has, and give yourself whatever items you need to test it. Fortunately, "End of Eden" is a rather simple game, turn-based, and has no complex 3D shenanigans. So, why not test cards, artifacts, etc., with unit tests? Testing game content in isolation might not help with finding certain edge cases that only happen in combination with each other, but it does a good job of validating the basic behavior and makes it easy to iterate quickly without having to start the game a bunch of times to see if everything works.
+게임 콘텐츠를 손으로 테스트하거나 예상대로 동작하는지 확인하는 게 번거로울 수 있습니다. 다행히 "End of Eden"은 단순한 턴 기반 게임이며 복잡한 3D 작업이 없습니다. 그렇다면 왜 카드, 아티팩트 등을 단위 테스트하지 않을까요?
 
-So, I wrote a small testing utility that executes the test function on all the registered game content. Here you can see the test function for the BLOCK status effect. For each test, a clean game state will be created, and the given game content is given to the player. In this test, we assert that the player has one status effect of the BLOCK type. Then we let an enemy damage the player and check if the damage is negated as expected.
+그래서 등록된 모든 게임 콘텐츠에서 테스트 함수를 실행하는 작은 테스트 유틸리티를 작성했습니다. 다음은 BLOCK 상태 효과의 테스트 예제입니다. 각 테스트마다 깨끗한 게임 상태가 생성되고 주어진 게임 콘텐츠가 플레이어에게 주어집니다.
 
 ```lua
 register_status_effect("BLOCK", {
@@ -239,7 +306,6 @@ register_status_effect("BLOCK", {
                 if damage ~= 0 then
                     return "Expected 0 damage, got " .. damage
                 end
-
                 damage = deal_damage(dummy, PLAYER_ID, 2)
                 if damage ~= 2 then
                     return "Expected 2 damage, got " .. damage
@@ -250,46 +316,23 @@ register_status_effect("BLOCK", {
 })
 ```
 
-Integrating this into the normal Go testing was easy, so you can use go test to test the content or use the standalone testing binary. Here is an example output when using go test:
+이것도 게임의 CI에 통합되어 있습니다. Lua나 Go를 변경하는 커밋이 푸시될 때마다 테스터가 실행되며 실패하면 CI 파이프라인이 실패합니다.
 
-```
-=== RUN   TestGame
-=== RUN   TestGame/Artifact:COMBAT_GLOVES
-=== RUN   TestGame/Artifact:COMBAT_GLASSES
-=== RUN   TestGame/Card:ENERGY_DRINK
-=== RUN   TestGame/Card:ARM_MOUNTED_GUN
-=== RUN   TestGame/Card:CROWBAR
-=== RUN   TestGame/Card:VIBRO_KNIFE
-=== RUN   TestGame/Card:ENERGY_DRINK_3
-=== RUN   TestGame/Card:NANO_CHARGER
-=== RUN   TestGame/Card:STIM_PACK
-=== RUN   TestGame/Card:MELEE_HIT
-=== RUN   TestGame/Card:ENERGY_DRINK_2
-=== RUN   TestGame/Card:LZR_PISTOL
-=== RUN   TestGame/Card:HAR_II
-=== RUN   TestGame/StatusEffect:NANO_CHARGER
-=== RUN   TestGame/StatusEffect:ULTRA_FLASH_SHIELD
-=== RUN   TestGame/StatusEffect:BLOCK
-=== RUN   TestGame/StatusEffect:BOUNCE_SHIELD
-=== RUN   TestGame/StatusEffect:FLASH_BANG
-=== RUN   TestGame/StatusEffect:FLASH_SHIELD
-```
-
-This is also integrated into the CI of this game. Each time a commit is pushed that changes Lua or Go, the tester will be run. If it fails, the CI pipeline fails.
-
-Check the code out in `/cmd/internal/tester`.
+코드는 `cmd/internal/tester`에서 확인할 수 있습니다.
 
 </details>
 
+<details>
+<summary><b>게임은 자체 Lua 문서와 자동 완성을 생성합니다</b></summary>
 
-<details><summary>The game generates its own lua documentation + autocomplete</summary><br>
+Lua와 그 문법을 그다지 좋아하지 않지만, 거의 모든 언어에 쉽게 임베드할 수 있다는 점이 마음에 듭니다. 그래서 그 사실이 문법에 대한 개인적인 단점보다 더 컸습니다. 제가 놓치고 있던 유일한 것은 **게임 API에 대한 멋진 자동 완성**이었습니다.
 
-I'm not a huge fan of Lua and its syntax, but I like how easily it can be embedded into nearly any language. Because it is used in so many places, especially games, there is a lot of information and libraries available. So, in my opinion, these facts outweighed my personal cons about the syntax. The only thing that I was missing was nice auto-complete for the game's API. That's when I learned about the lua-language-server and its great support for [definitions](https://github.com/LuaLS/lua-language-server/wiki/Annotations). So, I wrote the basic definitions of things that don't change in the game, and the rest is generated dynamically by the game.
+그때 [lua-language-server](https://github.com/LuaLS/lua-language-server)와 정의에 대한 훌륭한 지원에 대해 알게 되었습니다. 그래서 게임에서 변하지 않는 것들의 기본 정의를 작성했고, 나머지는 게임이 동적으로 생성합니다.
 
-Currently, there is a utility to generate markdown-based documentation and the annotations for the language server. You can find the Lua docs [here](docs/LUA_API_DOCS.md) and definitions [here](assets/scripts/definitions). The docs are defined in code where I define Lua functions and constants. That way, I write the docs at the same moment that I define the Lua objects.
+지금은 마크다운 기반 문서와 언어 서버용 주석을 생성하는 유틸리티가 있습니다. Lua 문서는 [`docs/LUA_API_DOCS.md`](docs/LUA_API_DOCS.md)에서, 정의는 `assets/scripts/definitions`에서 찾을 수 있습니다. 문서는 Lua 함수와 상수를 정의하는 코드에 함께 정의되어 있어요.
 
 ```go
-d.Global("PLAYER_ID", "Player actor id for use in functions where the guid is needed, for example: ``deal_damage(PLAYER_ID, enemy_guid, 10)``.") // <- docs
+d.Global("PLAYER_ID", "Player actor id for use in functions where the guid is needed, for example: `deal_damage(PLAYER_ID, enemy_guid, 10)`.") // <- docs
 l.SetGlobal("PLAYER_ID", lua.LString(PlayerActorID)) // <- lua
 
 d.Function("guid", "returns a new random guid.", "guid") // <- docs
@@ -299,10 +342,10 @@ l.SetGlobal("guid", l.NewFunction(func(state *lua.LState) int {
 })) // <- lua
 ```
 
-This results in lua definitions like:
+이는 다음과 같은 Lua 정의를 만듭니다:
 
 ```lua
---- Player actor id for use in functions where the guid is needed, for example: ``deal_damage(PLAYER_ID, enemy_guid, 10)``.
+--- Player actor id for use in functions where the guid is needed, for example: `deal_damage(PLAYER_ID, enemy_guid, 10)`.
 PLAYER_ID = ""
 
 --- returns a new random guid.
@@ -310,53 +353,76 @@ PLAYER_ID = ""
 function guid() end
 ```
 
-And if you open the `/assets/scripts` folder with Visual Studio Code and the [Lua extension](https://marketplace.visualstudio.com/items?itemName=sumneko.lua), you will get nice autocomplete with typing (for the most part), which makes the scripting experience so much nicer!
+`/assets/scripts` 폴더를 Visual Studio Code와 [Lua 확장](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)으로 열면 타이핑할 때 멋진 자동 완성(대부분의 경우)을 얻을 수 있어 스크립팅 경험이 훨씬 좋아집니다!
 
-![lua autocomplete](.github/lua_autocomplete.png)
+![Lua 자동 완성](.github/lua_autocomplete.png)
 
-Check the code out in `/cmd/internal/docs`.
+코드는 `cmd/internal/docs`에서 확인할 수 있습니다.
 
 </details>
 
-## Building
+---
 
-### Automatic
+# 빌드
 
-You can use the ``./build.sh`` script to build all the binaries. The script will create a ``bin`` folder and put all the binaries and assets in there. If go is not installed on your system, the script will prompt to automatically fetch and run go via [pkgx](https://pkgx.dev/). pkgx is a package managment tool to run various programs without needing to install them yourself.
+## 자동 빌드
 
-### Manual
+`./build.sh` 스크립트를 사용해 모든 바이너리를 빌드할 수 있습니다. 스크립트는 `bin` 폴더를 만들고 모든 바이너리와 에셋을 그 안에 넣습니다. 시스템에 Go가 설치되어 있지 않다면 [pkgx](https://pkgx.dev/)를 통해 자동으로 가져와 실행하라는 메시지가 표시됩니다. pkgx는 자체 설치 없이 다양한 프로그램을 실행할 수 있는 패키지 관리 도구입니다.
 
-- You need golang ``>= 1.20`` installed
-- Build binary:
-  - ``go build -o end_of_eden ./cmd/game/`` (terminal version)
-  - ``go build -o end_of_eden ./cmd/game_win/`` (gl version)
-- Now a ``end_of_eden(.exe)`` binary should be available in your current directory
-- To run without building binaries use ``run`` instead of ``build`` (e.g. ``go run ./cmd/game/``)
-- **Important:** The games working directory needs to be where the ``./assets`` folder is available!
+```bash
+./build.sh
+```
 
-## Versioning
+## 수동 빌드
 
-The game uses versioning similar to [Semantic Versioning](https://semver.org/) to define the version number. This is also in accordance with the [Go Modules](https://go.dev/doc/modules/version-numbers) versioning scheme.
+- Go **`>= 1.20`** 필요 (`go.mod` 기준 `1.23`)
+- 터미널 버전:
+  ```bash
+  go build -o ./build/end_of_eden ./cmd/game/
+  ```
+- GL 버전 (Windows):
+  ```bash
+  go build -o ./build/end_of_eden.exe ./cmd/game_win/
+  ```
+- 빌드 없이 실행:
+  ```bash
+  go run ./cmd/game/
+  ```
 
-v``Major``.``Minor``.``Patch``
+> ⚠️ **중요:** 게임의 작업 디렉토리는 `./assets` 폴더가 사용 가능한 곳이어야 합니다!
 
-- **Major:** Major version represents a major milestone in the games development. A major version of ``0`` represents the early development phase of the game, where nothing is set in stone yet and everything can change.
-- **Minor:** Minor version represents a new feature or a significant change.
-- **Path:** Smaller changes, bug fixes and improvements.
+---
 
-# Socials
+# 버전 관리
 
-- **itch.io:** https://bigjk.itch.io/end-of-eden
-- **indiedb:** https://www.indiedb.com/games/end-of-eden
+이 게임은 [의미론적 버전 관리(SemVer)](https://semver.org/)와 유사한 방식으로 버전 번호를 정의합니다. 이는 [Go Modules](https://go.dev/doc/modules/version-numbers) 버전 관리 체계와도 일치합니다.
 
-# Credits
+**v`Major`.`Minor`.`Patch`**
 
-- Thanks to **Huw Millward** for the face data published in [Warsim Generator Toolbox](https://huw2k8.itch.io/warsims-generator-toolbox)
-- [Interface Beep Sounds](https://bleeoop.itch.io/interface-bleeps) by **Bleeoop**
-- [512 Sound Effect Pack](https://opengameart.org/content/512-sound-effects-8-bit-style) by **Juhani Junkala**
-- Music and additional audio work by [synthroton](https://synthroton.bandcamp.com/)
+- **Major** — 게임 개발의 주요 마일스톤. `0` Major 버전은 초기 개발 단계를 나타내며, 아직 확정된 것이 없고 모든 것이 변경될 수 있습니다.
+- **Minor** — 새로운 기능이나 중요한 변경.
+- **Patch** — 작은 변경, 버그 수정 및 개선.
 
-# License
+---
 
-- **Code:** licensed under MIT
-- **Assets:** See README.md in corresponding folder
+# 소셜
+
+- **itch.io**: https://bigjk.itch.io/end-of-eden
+- **IndieDB**: https://www.indiedb.com/games/end-of-eden
+- **Discord**: https://discord.gg/XpDvfvVuB2
+
+---
+
+# 크레딧
+
+- 얼굴 데이터를 공개한 **Huw Millward** — [Warsim Generator Toolbox](https://huw2k8.itch.io/warsims-generator-toolbox)
+- **Bleeoop**의 [Interface Beep Sounds](https://bleeoop.itch.io/interface-bleeps)
+- **Juhani Junkala**의 [512 Sound Effect Pack](https://opengameart.org/content/512-sound-effects-8-bit-style)
+- 음악 및 추가 오디오 작업 — [synthroton](https://synthroton.bandcamp.com/)
+
+---
+
+# 라이선스
+
+- **코드**: [MIT 라이선스](LICENSE)
+- **에셋**: 해당 폴더의 `README.md` 참조
